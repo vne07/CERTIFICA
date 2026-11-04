@@ -6,3 +6,4 @@
 - [ ] Adicionar mais Prova Social
 - [ ] Adicionar Preço dos Cursos
 - [ ] Colocar a Logo Certifica do jeito correto
+- [ ] Adicionar Política de Privacidade
