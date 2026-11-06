@@ -208,3 +208,25 @@ details[open]{box-shadow:var(--sh);border-color:var(--in2)}summary{padding:1.1re
 summary::after{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--sky)}
 .js .rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
 @media (max-width:860px){.hv{transform:none}.bar{border-top:0;box-shadow:0 -8px 24px rgba(10,38,65,.18)}.menu{display:none}}
+
+/* ===== v4: frases de impacto, método, HP 12C e páginas de curso ===== */
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem}.card:nth-child(4)::before{background:var(--nv)}
+.impact{background:linear-gradient(100deg,var(--or),#FFA94D);color:var(--ink);padding:clamp(1.6rem,4vw,2.6rem) 0;text-align:center}
+.impact p{margin:0 auto;max-width:900px;font:800 clamp(1.3rem,3.2vw,2.1rem)/1.25 var(--h)}
+.impact em{font-style:normal;background:var(--nv);color:#fff;border-radius:10px;padding:0 .35em}
+.pn{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--or);color:var(--ink);font:800 1.1rem var(--h);margin-bottom:1rem}
+.bonus{margin-top:1.6rem;border-radius:22px;padding:1.8rem 2rem;background:linear-gradient(120deg,rgba(251,132,16,.18),rgba(45,169,71,.14));box-shadow:inset 0 0 0 1px rgba(251,132,16,.5)}
+.bonus .tag{display:inline-block;background:var(--or);color:var(--ink);font:800 .78rem var(--h);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:.3em .9em;margin-bottom:.9rem}
+.bonus .g2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}.bonus h3{font-size:1.25rem;margin-bottom:.3rem}.bonus p{margin:0}
+.hero .card{background:#fff;color:var(--ink)}ul.topics{display:grid;grid-template-columns:1fr 1fr;gap:.3rem 2rem}
+@media (max-width:860px){.bonus .g2,ul.topics{grid-template-columns:1fr}}
+
+/* selos ANBIMA nos cards de compra */
+.card .sel.logo{background:none;box-shadow:none;padding:0;border-radius:0}
+.card .sel.logo img{display:block;height:88px;width:auto;max-width:100%}
+
+/* v5: logo sem fundo (maior no cabeçalho) e vídeo do hero sem fundo preto */
+.logo img{height:76px}.plate img{height:100px}
+.hv{background:none;box-shadow:none;border:0;border-radius:0;overflow:visible;transform:none}.hv:hover{transform:none}
+.hv video{mix-blend-mode:screen;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
+@media (min-width:861px){.hero .wrap{grid-template-columns:.8fr 1.2fr}.hv{margin-right:-1.5rem}}

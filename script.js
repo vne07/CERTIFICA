@@ -39,6 +39,7 @@ var FEEDBACKS = [
 document.getElementById('y').textContent=new Date().getFullYear();
 function set(s,f){document.querySelectorAll(s).forEach(f)}
 set('.buy',function(a){if(!a.closest('.bar'))a.href=CONFIG.link});
+set('[data-buy]',function(a){a.href=CONFIG.link});
 set('.wpp',function(a){a.href=CONFIG.whatsapp});
 set('.area',function(a){a.href=CONFIG.area});
 set('[data-garantia]',function(e){e.textContent=CONFIG.garantia});
@@ -46,4 +47,4 @@ set('[data-gnum]',function(e){e.textContent=CONFIG.garantiaNum});
 
 (function(){var d=document.documentElement;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;d.classList.add('js');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in')},800)}})},{threshold:.12});
-document.querySelectorAll('.head,.lvl,.card,.combo,.pil,.step,.note,.since,.motto,.stats,.fb,details,.seal2').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)})})();
+document.querySelectorAll('.head,.lvl,.card,.combo,.pil,.step,.note,.since,.motto,.stats,.fb,details,.bonus').forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)})})();
