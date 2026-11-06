@@ -230,3 +230,6 @@ summary::after{flex:none;display:grid;place-items:center;width:32px;height:32px;
 .hv{background:none;box-shadow:none;border:0;border-radius:0;overflow:visible;transform:none}.hv:hover{transform:none}
 .hv video{mix-blend-mode:screen;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
 @media (min-width:861px){.hero .wrap{grid-template-columns:.8fr 1.2fr}.hv{margin-right:-1.5rem}}
+
+/* v6: no celular o cabeçalho rola junto com a página (não fica fixo no topo) */
+@media (max-width:860px){header{position:static}}
