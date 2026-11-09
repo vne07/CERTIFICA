@@ -233,3 +233,6 @@ summary::after{flex:none;display:grid;place-items:center;width:32px;height:32px;
 
 /* v6: no celular o cabeçalho rola junto com a página (não fica fixo no topo) */
 @media (max-width:860px){header{position:static}}
+
+/* v7: contato no rodapé */
+footer p .wpp{margin-top:.6rem;font-weight:700;color:#fff}

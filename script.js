@@ -1,7 +1,7 @@
 /* ====== CONFIGURE AQUI ====== */
 var CONFIG = {
   link: "#SEU-LINK",         // link de compra
-  whatsapp: "#SEU-WHATSAPP", // ex.: https://wa.me/55...
+  whatsapp: "https://wa.me/5519999116914", // WhatsApp de contato: (19) 99911-6914
   area: "#",                 // área do aluno
   garantia: "7 dias",
   garantiaNum: "7"
