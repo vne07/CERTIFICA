@@ -236,3 +236,6 @@ summary::after{flex:none;display:grid;place-items:center;width:32px;height:32px;
 
 /* v7: contato no rodapé */
 footer p .wpp{margin-top:.6rem;font-weight:700;color:#fff}
+
+/* v1.1: selo da HP12C (arte completa) em tamanho parecido com os selos da ANBIMA */
+.card .sel.logo img.hp{height:96px;width:auto}
