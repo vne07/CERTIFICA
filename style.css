@@ -239,3 +239,13 @@ footer p .wpp{margin-top:.6rem;font-weight:700;color:#fff}
 
 /* v1.1: selo da HP12C (arte completa) em tamanho parecido com os selos da ANBIMA */
 .card .sel.logo img.hp{height:96px;width:auto}
+
+/* v1.2: selos da ANBIMA no lugar dos números no bloco de níveis */
+.lvl .selo{display:block;width:auto;height:68px;margin-bottom:1rem}
+
+/* v1.3: depoimentos em loop contínuo, sem contador nem setas */
+.car.loop{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.car.loop .car-track{width:max-content;overflow:visible;scroll-snap-type:none;scroll-behavior:auto;padding:.6rem 0 1.4rem;animation:carloop var(--dur,60s) linear infinite;will-change:transform}
+.car.loop .car-track>*{flex:0 0 clamp(270px,30vw,380px)}
+@media (hover:hover){.car.loop:hover .car-track{animation-play-state:paused}}
+@keyframes carloop{to{transform:translateX(var(--shift,-50%))}}
