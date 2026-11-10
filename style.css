@@ -249,3 +249,14 @@ footer p .wpp{margin-top:.6rem;font-weight:700;color:#fff}
 .car.loop .car-track>*{flex:0 0 clamp(270px,30vw,380px)}
 @media (hover:hover){.car.loop:hover .car-track{animation-play-state:paused}}
 @keyframes carloop{to{transform:translateX(var(--shift,-50%))}}
+
+/* v1.4: no celular/tablet os depoimentos viram carrossel de deslizar (um por vez), sem rolagem automática */
+.car-hint{display:none;margin:.2rem 0 0;text-align:center;font:600 .85rem var(--b);color:var(--mute)}
+.car-track{scroll-snap-stop:always;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+@media (max-width:860px),(hover:none) and (pointer:coarse){.car:not(.loop) .car-hint{display:block}}
+@media (max-width:640px){.fb p{font-size:1.05rem;line-height:1.6}.car-track{padding-left:.2rem;scroll-padding-left:.2rem}}
+
+/* v1.5: modo celular só por largura de tela; em telas de toque maiores o loop pausa enquanto o dedo está na tela */
+@media (hover:none){.car.loop:active .car-track{animation-play-state:paused}}
+@media (max-width:860px){.car:not(.loop) .car-hint{display:block}}
+@media (prefers-reduced-motion:reduce){.car-track{scrollbar-width:thin;scrollbar-color:var(--in2) transparent}.car-track::-webkit-scrollbar{display:block;height:8px}.car-track::-webkit-scrollbar-thumb{background:var(--in2);border-radius:8px}.car:not(.loop) .car-hint{display:block}}

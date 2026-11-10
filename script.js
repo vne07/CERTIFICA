@@ -30,14 +30,24 @@ var FEEDBACKS = [
     else{var p=document.createElement('p');p.textContent='“'+f.texto+'”';var ft=document.createElement('footer'),av=document.createElement('b'),tx=document.createElement('span');av.textContent=f.nome.trim().split(/\s+/).filter(function(w,k,a){return k==0||k==a.length-1}).map(function(w){return w[0]}).join('').toUpperCase();av.setAttribute('aria-hidden','true');tx.textContent=f.nome+(f.curso?' · '+f.curso:'');ft.appendChild(av);ft.appendChild(tx);d.appendChild(p);d.appendChild(ft)}
     t.appendChild(d)
   });
-  /* Loop contínuo: duplica os cards e desliza sem parar. Pausa ao passar o mouse.
-     Com "reduzir movimento" ativado no aparelho, vira uma lista rolável manualmente. */
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  /* Computador: loop contínuo, pausa ao passar o mouse.
+     Celular (tela de até 860 px) ou "reduzir movimento" ativado no aparelho: carrossel de deslizar, um depoimento por vez, para ler com calma. */
   var car=t.parentNode,n=t.children.length;
-  for(var k=0;k<n;k++){var c=t.children[k].cloneNode(true);c.setAttribute('aria-hidden','true');t.appendChild(c)}
-  car.classList.add('loop');t.removeAttribute('tabindex');
-  function go(){var w=t.children[n].offsetLeft-t.children[0].offsetLeft;t.style.setProperty('--shift','-'+w+'px');t.style.setProperty('--dur',(w/45)+'s')}
-  go();window.addEventListener('resize',go);
+  var calm=matchMedia('(max-width:860px),(prefers-reduced-motion:reduce)');
+  var hint=document.createElement('p');hint.className='car-hint';hint.textContent='Deslize para o lado para ler os próximos \u2192';car.appendChild(hint);
+  function go(){if(!car.classList.contains('loop'))return;var w=t.children[n].offsetLeft-t.children[0].offsetLeft;t.style.setProperty('--shift','-'+w+'px');t.style.setProperty('--dur',(w/45)+'s')}
+  function apply(){
+    var loop=car.classList.contains('loop');
+    if(calm.matches){
+      if(loop){[].slice.call(t.querySelectorAll('.clone')).forEach(function(c){c.remove()});car.classList.remove('loop');t.scrollLeft=0}
+      t.setAttribute('tabindex','0')
+    }else{
+      if(!loop){for(var k=0;k<n;k++){var c=t.children[k].cloneNode(true);c.className+=' clone';c.setAttribute('aria-hidden','true');t.appendChild(c)}car.classList.add('loop');t.removeAttribute('tabindex')}
+      go()
+    }
+  }
+  apply();window.addEventListener('resize',go);
+  if(calm.addEventListener)calm.addEventListener('change',apply);else if(calm.addListener)calm.addListener(apply);
 })();
 document.getElementById('y').textContent=new Date().getFullYear();
 function set(s,f){document.querySelectorAll(s).forEach(f)}
