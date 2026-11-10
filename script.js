@@ -1,5 +1,6 @@
 /* ====== CONFIGURE AQUI ====== */
 var CONFIG = {
+  promo: true,              // faixa de oferta no topo (true mostra, false esconde)
   link: "#SEU-LINK",         // link de compra
   whatsapp: "https://wa.me/5519999116914", // WhatsApp de contato: (19) 99911-6914
   area: "#",                 // área do aluno
@@ -49,6 +50,7 @@ var FEEDBACKS = [
   apply();window.addEventListener('resize',go);
   if(calm.addEventListener)calm.addEventListener('change',apply);else if(calm.addListener)calm.addListener(apply);
 })();
+if(!CONFIG.promo){var pr=document.querySelector('.promo');if(pr)pr.remove()}
 document.getElementById('y').textContent=new Date().getFullYear();
 function set(s,f){document.querySelectorAll(s).forEach(f)}
 set('.buy',function(a){if(!a.closest('.bar'))a.href=CONFIG.link});
