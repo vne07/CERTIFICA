@@ -14,3 +14,4 @@
 - [x] Adicionar numero de whatsapp para contato
 - [ ] Mudar dots da hero
 - [ ] Mudar o comentario de 5 simulados no bloco do metodo
+- [ ] Tática comercial no inicio do site
