@@ -18,3 +18,4 @@
 - [ ] Adicionar preço HP12C
 - [ ] Mudar conteúdo HP12C
 - [x] Colocar a duração de Acesso
+- [ ] Segurança do site
