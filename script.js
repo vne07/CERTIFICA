@@ -1,7 +1,12 @@
 /* ====== CONFIGURE AQUI ====== */
 var CONFIG = {
   promo: true,              // faixa de oferta no topo (true mostra, false esconde)
-  link: "#SEU-LINK",         // link de compra
+  links: {                   // um link de compra para cada curso
+    cpa:   "#https://pay.hotmart.com/I108519043K",
+    cpror: "#https://pay.hotmart.com/O108519150E",
+    cproi: "#https://pay.hotmart.com/B108519277U",
+  },
+  link: "#SEU-LINK",         // link geral (usado só no botão do combo)
   whatsapp: "https://wa.me/5519999116914", // WhatsApp de contato: (19) 99911-6914
   area: "#",                 // área do aluno
   garantia: "7 dias",
@@ -20,10 +25,7 @@ var FEEDBACKS = [
   {nome:"Vitória de Paula", curso:"aprovada pela Certifica", texto:"Vocês sem dúvidas são os melhores mentores do mercado financeiro. Oferece conteúdos extremamente didáticos, personalizados as nossas necessidades e dificuldades. Comunicação clara e assertiva. Recomendo 100%."},
   {nome:"Alex Rezende", curso:"aprovado pela Certifica", texto:"Conquistei minha certificação ANBIMA CPA20 em dezembro de 2022, após perder meu pai para um câncer. E sou eternamente grato a vocês pelo apoio incondicional. A didática de ensino é fantástica, e consegue passar de forma clara e simples, qualquer conteúdo mais dificil que seja."},
   {nome:"Lilian Araujo", curso:"aprovada pela Certifica", texto:"Passei na CPRO-R."},
-  {nome:"Sali EMP", curso:"aprovada pela Certifica", texto:"Sou fã de vocês. Meus parabéns pela didática, por tudo e compartilhar conosco esse conhecimento."},
-  {nome:"Anônimo", curso:"aprovada pela Certifica", texto:"Os mapas mentais foram um achado nessa minha reta final da minha preparação para a prova. Me ajudau demais a repassar todos os conceitos e consegui passar na prova. Muito obrigada mesmo!"},
-  {nome:"Anônimo", curso:"aprovado pela Certifica", texto:"Deixei para estudar em cima da hora e os mapas mentais estão sendo um verdadeiro salva-vidas! O plano de revisão de 7 dias também tá sendo essencial pra organizar os últimos estudos."},
-  {nome:"Anônimo", curso:"aprovado pela Certifica", texto: "comprei os mapas mentais esse mês, minha prova é na próxima semana. Foram ótimos pra ajudar a sintetizar o conteúdo, e também os simulados agregaram bastante nos meus estudos. Já indiquei pra muita gente!!"},
+  {nome:"Sali EMP", curso:"aprovada pela Certifica", texto:"Sou fã de vocês. Meus parabéns pela didática, por tudo e compartilhar conosco esse conhecimento."}
 ];
 (function(){
   var t=document.getElementById('carTrack');
@@ -56,8 +58,8 @@ var FEEDBACKS = [
 if(!CONFIG.promo){var pr=document.querySelector('.promo');if(pr)pr.remove()}
 document.getElementById('y').textContent=new Date().getFullYear();
 function set(s,f){document.querySelectorAll(s).forEach(f)}
-set('.buy',function(a){if(!a.closest('.bar'))a.href=CONFIG.link});
-set('[data-buy]',function(a){a.href=CONFIG.link});
+set('.buy',function(a){if(!a.closest('.bar')&&!a.dataset.curso)a.href=CONFIG.link});
+set('[data-curso]',function(a){a.href=CONFIG.links[a.dataset.curso]||CONFIG.link});
 set('.wpp',function(a){a.href=CONFIG.whatsapp});
 set('.area',function(a){a.href=CONFIG.area});
 set('[data-garantia]',function(e){e.textContent=CONFIG.garantia});
