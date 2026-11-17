@@ -135,7 +135,7 @@ Dúvidas, solicitações ou reclamações sobre esta Política e sobre o tratame
 
 - **E-mail:** viniciuscoliveira14@gmail.com
 - **WhatsApp:** (19) 99911-6914
-- **Encarregado de dados (DPO):** viniciuscoliveira14@gmail.com
+- **Encarregado de dados (DPO):** Vinícius Castro de Oliveira, viniciuscoliveira14@gmail.com
 
 Você também pode registrar reclamação junto à **Autoridade Nacional de Proteção de Dados (ANPD)**: [www.gov.br/anpd](https://www.gov.br/anpd).
 
