@@ -6,7 +6,7 @@ var CONFIG = {
     cpror: "#https://pay.hotmart.com/O108519150E",
     cproi: "#https://pay.hotmart.com/B108519277U",
   },
-  link: "#SEU-LINK",         // link geral (usado só no botão do combo)
+  link: "#https://pay.hotmart.com/M108536602J",         // link geral (usado só no botão do combo)
   whatsapp: "https://wa.me/5519999116914", // WhatsApp de contato: (19) 99911-6914
   area: "#",                 // área do aluno
   garantia: "7 dias",

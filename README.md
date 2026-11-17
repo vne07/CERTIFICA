@@ -21,3 +21,4 @@
 - [x] Colocar a duração de Acesso
 - [x] Segurança do site
 - [ ] Adicionar no dominio
+- [ ] Adicionar dados na politica de privacidade e segurança
