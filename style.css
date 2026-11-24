@@ -234,8 +234,6 @@ summary::after{flex:none;display:grid;place-items:center;width:32px;height:32px;
 /* v6: no celular o cabeçalho rola junto com a página (não fica fixo no topo) */
 @media (max-width:860px){header{position:static}}
 
-/* v7: contato no rodapé */
-footer p .wpp{margin-top:.6rem;font-weight:700;color:#fff}
 
 /* v1.1: selo da HP12C (arte completa) em tamanho parecido com os selos da ANBIMA */
 .card .sel.logo img.hp{height:96px;width:auto}
@@ -329,3 +327,9 @@ ul.ck li.gift::before{background:var(--or) url("data:image/svg+xml,%3Csvg xmlns=
 .gift-box h2{margin:.6rem 0 .5rem}.gift-box p{margin:0 0 1rem;color:var(--mute)}
 .brinde .topics{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.1rem 1.5rem;margin-bottom:1.4rem}
 @media (max-width:700px){.gift-box{grid-template-columns:1fr}.gift-strip{flex-direction:column;align-items:flex-start}}
+
+/* v1.8: WhatsApp flutuante (bolinha) no canto inferior direito; some do rodapé */
+.wpp-float{position:fixed;right:1.2rem;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4);transition:transform .15s,filter .15s}
+.wpp-float:hover{transform:scale(1.08);filter:brightness(1.05)}
+.wpp-float:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #1F8A3A}
+@media (max-width:860px){.wpp-float{width:52px;height:52px;right:1rem;bottom:calc(5.6rem + env(safe-area-inset-bottom,0px))}}
