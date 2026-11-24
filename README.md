@@ -22,3 +22,4 @@
 - [x] Segurança do site
 - [x] Adicionar no dominio
 - [x] Adicionar dados na politica de privacidade e segurança
+- [ ] "desiaizar"
